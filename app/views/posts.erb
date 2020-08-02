@@ -1,0 +1,22 @@
+<h1>Hacker News</h1>
+<a href="http://localhost:4567/" onclick="this.style.backgroundColor='#000000'">Paint it black</a>
+# TODO: list posts here. You can use instance variables set in the controller (app.rb)
+<form action="/" method="post">
+  <h3>Title</h3>
+<input type="insert" name="title">
+<h3>Url</h3>
+<input type="insert" name="url">
+<hr>
+<!-- <input > -->
+<button type="submit"> Publish 🚀 </button>
+<hr>
+</form>
+
+<ul>
+  <% @posts.each do |post| %>
+    <a href="http://localhost:4567/">
+      <li><%= post.votes %> | <%= post.title %> | <a href="/upvote/<%= post.id %>" class="btn"> 👍</a> <a href="/downvote/<%= post.id %>" class="btn"> 👎</a></li>
+    </a>
+  <% end %>
+</ul>
+
